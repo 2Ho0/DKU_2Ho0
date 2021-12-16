@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    
+        header> h1{
+           text-align: center ;
+       }
+        header{ 
+            float: none;
+            color: brown ;
+            text-align: center ;
+            background-color:aqua;
+        } 
+       
+        nav{
+           background-color: gold;
+           position: fixed;
+           left: 10px;
+            float: left;
+        }
+        section{
+            background-color: aliceblue;
+            float: right;
+            width: 450px;
+        
+        }
+
+        ul{
+            border-style: dotted;
+            border-width: 1px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+       p{
+            font-family:'Times New Roman', Times, serif ;
+            font-size: 1em;
+            text-indent: 1em;
+        }
+
+        h2, h3{
+            color: blue;
+            text-shadow: 3px 3px lightblue;
+        }
+
+        footer{
+            clear: both;
+            text-align: center ; 
+            background-color: orange;
+            border-radius: 50px;
+        }    
+    </style>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2021-2-WebProg-C2-HW1-이호영-32203689</title>
+<style>
+	body { background-color : linen; color : green;
+				margin-left : 40px; margin-right : 40px;}
+	h3 { text-align : center; color : darkred;}
+	hr { height : 5px; border : solid grey;
+				background-color : grey }
+	span { color: blue; font-size: 20px; }
+</style>
+<script>
+	function show() { // <img>에 이미지 달기
+		document.getElementById("fig").src = "이호영 사진.jpg"
+	}
+	function hide() { // <img>에 이미지 제거
+		document.getElementById("fig").src= "";
+	}
+</script>
+</head>
+<body>
+<h3 onmouseover="show()" onmouseout="hide()">이호영</h3>
+<hr>
+<div><img id="fig" src=""></div>
+안녕하세요 저는 단국대학교 소프트웨어학과에 재학중인 20학번 이호영입니다.
+저는 2001년생으로 현재 <span>21살</span>이고 고향은 <span>광주광역시</span>입니다.
+저의 직업 목표는 <span>백엔드</span> 개발자가 되는 것입니다.
+</body>
+</html>

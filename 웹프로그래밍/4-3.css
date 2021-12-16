@@ -1,0 +1,16 @@
+.main{
+    background-color: aquamarine;
+}
+.headline{
+    color: brown;
+}
+div.help{
+    color: blue;
+}
+p.help{
+    font-size: large;
+    color: red;
+}
+#hot{
+    background-color: orange;
+}

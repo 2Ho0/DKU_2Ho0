@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>캔버스에 파이 차트 그리기</title>
+    </head>
+    <script>
+    function draw(){
+    
+    var canvas  = document.getElementById("chartcanvas")
+    var context = canvas.getContext("2d")
+    context.clearRect(0,0,canvas.width,canvas.height)
+    var sw = canvas.width
+    var sh = canvas.height
+    var padding = 100
+    
+    var dataa = document.getElementById("A")
+    var datab = document.getElementById("B")
+    var datac = document.getElementById("C")
+    var datad = document.getElementById("D")
+    var dataf = document.getElementById("F")
+    
+    var color = ["blue", "green", "yellow", "magenta", "red"];
+    var grades = ["A","B","C","D","F"];
+    var conterX = sw/2
+    var conterY = sh/2
+
+    var radius = Math.min(sw-(padding*2), sh-(padding*2))/2
+    var angle = 0
+    var total = 0
+    var data = []
+    data[0] = parseInt(dataa.value)
+    data[1] = parseInt(datab.value)
+    data[2] = parseInt(datac.value)
+    data[3] = parseInt(datad.value)
+    data[4] = parseInt(dataf.value)
+
+    for(var i =0; i< data.length; i++){
+        total += data[i]
+    }
+
+    for(var i = 0; i< data.length; i++){
+        context.beginPath()
+        context.fillStyle = color[i]
+        context.moveTo(conterX, conterY)
+        context.arc(conterX, conterY, radius, angle, angle+(Math.PI*2*(data[i]/total)))
+        context.lineTo(conterX, conterY)
+        context.fill()
+        angle +=Math.PI*2*(data[i]/total)
+        context.stroke()
+        context.font = "12px arial"
+        context.fillStyle = "black"
+        context.fillText(`${grades[i]} 학점 ${(data[i]/total*100).toFixed(1)}%: ${color[i]}`,10,10+i*20 )
+        context.innerHTML="<br>"
+        
+    }
+    
+}
+    </script>
+    <body>
+        <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+        <hr>
+        A <input type="number" id="A" value="0">
+        B <input type="number" id="B" value="0">
+        C <input type="number" id="C" value="0">
+        <br>
+        D <input type="number" id="D" value="0">
+        F <input type="number" id="F" value="0">
+        <button type="button" onclick="draw()">차트 그리기</button>
+        <br>
+        <canvas id="chartcanvas" style="background-color:aliceblue" width="500" height="400" ></canvas>
+    
+    </body>
+</html>

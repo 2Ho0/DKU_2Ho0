@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어장 만들기</title>
+    <style>
+        a{
+            text-decoration-line : none;
+            text-decoration : none;
+        }
+        a:visited { color: black; text-decoration: none;}
+
+    </style>
+</head>
+<body>
+    <h3>나의 단어장 만들기</h3>
+    <hr>
+    영어: <input id = "english" type="text" size="10"><br>
+    한글: <input id = "korean" type="text" size="10">
+    <br><br>
+    <button id="word save" onclick="save()">단어 저장</button>
+    <button id="word search" onclick="search()">영단어 검색</button>
+    <button id="word delete" onclick="d()">단어 삭제</button>
+    <button id="show all" ><a href="word.html" target="_blank">전체 보기</a> </button>
+
+    <script>
+       
+        
+        function save(){
+            if(!window.localStorage) {
+                alert("세션 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            localStorage.setItem(english.value, korean.value);
+        }
+        
+        function search(){
+            if(!window.localStorage) {
+                alert("세션 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            var val = localStorage.getItem(english.value);
+            if(val==null)
+            alert(english.value + "는 없는 단어입니다.");
+            else
+            alert(localStorage.getItem(english.value));
+
+        }
+        function d(){
+            if(!window.localStorage) {
+                alert("세션 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            
+            if(val==null)
+            alert(english.value + "는 없는 단어입니다.");
+            else
+            var val = localStorage.removeItem(english.value);
+        } 
+        
+    </script>
+</body>
+</html>

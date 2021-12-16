@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border : 1px solid blue;
+            border-collapse : collapse;
+        }
+        td {
+            border : 1px solid blue;
+            width : 50px;
+            height : 50px;
+            padding : 0px;
+        }
+        </style>
+        <script>
+        var select=0; // 선택된 셀
+        var img = new Image();
+        img.src="스폰지밥.png";
+        function set() {
+        var table = document.getElementById("shell");
+     
+        // 10X10 CELL START
+        for( var i = 0; i < 10; i++ ){
+            var row = document.createElement("tr");
+            for( var j = 0; j < 10; j++ ){
+                var col = document.createElement("td");
+                col.innerHTML = "<img src=''>"// assigning value to the cell
+                row.appendChild(col);
+            }
+            table.appendChild(row);
+        }
+        // 10X10 CELL END
+     
+            for(var i=0;i<100;i++) { // 100개의 이미지에 모두 click 리스너 등록
+                document.images[i].onclick=moveImage;
+                document.images[i].style.visibility = "hidden"; // <img> 태그 엘리먼트가 공간을 차지하지만 보이지 않게 한다.
+            }
+            moveImage(); // 셀을 선택하고 이미지 출력
+        }
+        // <img> 태그의 click 리스너
+        function moveImage() { // 다른 셀로 이미지를 옮긴다.
+            document.images[select].src=""; // 현재 <img>에 보여질 이미지 제거
+            document.images[select].style.visibility = "hidden"; // 현재 이미지를 보이지 않게 한다.
+            select = Math.floor(Math.random()*100); // 0~99 사이의 랜덤한 셀 선택
+            document.images[select].src=img.src; // 새로 선택된 셀에 이미지 출력
+            document.images[select].style.visibility = "visible"; // 새로 이동하는 이미지를 보이게 한다.
+        }
+        </script>
+</head>
+    <body onload="set()">
+    <table id="shell"></table>
+  </body>
+</html>

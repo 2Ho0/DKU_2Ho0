@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="case1" onclick="javascript: this.innerText = 'case1'">방법1</button>
+    <button id="case2">방법2</button>
+    <button id="case3">방법3</button>
+    <button id="case4">방법4</button>
+    
+
+    <script>
+        var case2 = document.getElementById("case2")
+        var case3 = document.getElementById("case3")
+        var case4 = document.getElementById("case4")
+        document.get
+        case2.onclick = change2
+        case3.addEventListener("click",change3)
+        case4.onclick = function(){
+            case4.innerText = "case4"
+        }
+    function change2(){
+        case2.innerText = "case2"
+    }
+    function change3(){
+        case3.innerText = "case3"
+    }
+    </script>
+</body>
+</html>

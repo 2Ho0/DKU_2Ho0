@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes snow{
+            from{
+                margin-top: 0%;
+            }
+            to{
+                margin-top: 45%;
+            }
+        }
+       
+        body {
+          background-image: url("https://t1.daumcdn.net/cfile/tistory/1142054A4EF4A4D206");
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+
+        div {
+            animation-name: snow;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            font-size: 100px;
+            font-size: 50px;
+            color:white;
+            border-style: none;
+        }
+      </style>
+      
+      <script>
+        let width = 1669;
+        let height = 199;
+        let snowcount = 30;
+    
+        function first_position() {
+          let text = "";
+          for(let i=0; i<70; i++) {
+            ranlocation = Math.floor(Math.random() * (width+1));
+            rantoplocation = Math.floor(Math.random() * (height+1));
+            text = "<div style='position: absolute; top:" + rantoplocation + "px; left: " + ranlocation + "px;'>*</div>"
+            document.body.innerHTML += text;
+          }
+        }
+        
+      </script>
+</head>
+
+<body>
+    <script>
+         first_position()
+    </script>
+   
+    
+</body>
+</html>

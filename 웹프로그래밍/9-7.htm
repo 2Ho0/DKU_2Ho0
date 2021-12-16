@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>span 태그에만 onmouseover/onmouseout</h3>
+    <hr>
+    <p>span태그에 대해서만 <span id="span">마우스</span>가 올라올 때 밑줄이 그어지고 <br>
+        <span>마우스</span>가 내려갈 때 밑줄이 사라지도록 <span>자바스크립트</span> 코드를 작성한다</p>
+    <script>
+        var span = document.getElementsByTagName("span")
+        span[1].addEventListener("mouseover",over)
+        span[1].addEventListener("mouseout",out)
+        function over(){
+            span[1].style.backgroundColor = "orchid"
+            span[1].style.textDecorationLine="underline"
+        }
+        function out(){
+            span[1].style.backgroundColor = "white"
+            span[1].style.textDecorationLine = "none"
+
+        }
+    </script>
+</body>
+</html>

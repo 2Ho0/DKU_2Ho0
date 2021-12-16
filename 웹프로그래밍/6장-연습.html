@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <!-- <script type="text/javascript" src="6장-연습.js">
+        
+    </script> -->
+    <!-- <script>var arr = ["값1", "값2","값3","값4","값5","값6"];
+            arr.copyWithin(0,2,3);
+            document.write(arr);
+    </script> -->
+    <!-- <script>
+        const arr = [
+        {name: 'apple', price : 1000}, 
+        {name: 'banana', price : 2000},
+        {name: 'apple', price: 3000}
+      ];
+      
+      function isApple(element)  {
+        if(element.name === 'apple')  {
+          return true;
+        }
+      }
+      
+      const apple = arr.find(isApple);
+      document.writeln(apple.name); // apple
+      document.writeln(apple.price); // 1000
+
+    </script> -->
+    <script>
+        const arr = [1, 1, '1', 1];
+
+        function findNumberOne(element)  {
+            if(element === 1) return true;
+        }
+
+        document.writeln(arr.findIndex(findNumberOne));
+    </script>
+    
+</body>
+</html>

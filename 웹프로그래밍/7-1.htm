@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>난수 10개 생성</h3>
+    <hr>
+
+    <script>
+
+        list = []
+        for(i=0; i<10; i++){
+           var m = Math.random()*100
+           list[i] = Math.floor(m);
+        }
+        var max = Math.max(...list)
+        document.writeln(list,"<hr>",);
+        document.write(max);
+        
+    </script>
+</body>
+</html>

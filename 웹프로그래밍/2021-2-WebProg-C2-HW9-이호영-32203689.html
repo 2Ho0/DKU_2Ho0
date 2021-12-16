@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>겜블링 게임</title>
+    <style>
+        #gamebling{
+            background-color: linen;
+            width: 150px;
+            height: 70px;
+            border: 2px solid pink;
+            padding-left: 10px;
+            font-style: italic;
+            font-size: 50px;
+            color: darkblue;
+        }
+        #result{
+            color: mediumpurple;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function changeA(){
+            var anum = document.getElementById("a");
+            var rnum = Math.floor(Math.random()*3);
+            anum.innerHTML = rnum;
+        }
+        function changeB(){
+            var bnum = document.getElementById("b");
+            var rnum = Math.floor(Math.random()*3);
+            bnum.innerHTML = rnum;
+        }
+        function changeC(){
+            var anum = document.getElementById("a");
+            var bnum = document.getElementById("b");
+            var cnum = document.getElementById("c");
+            var rnum = Math.floor(Math.random()*3);
+            cnum.innerHTML = rnum;
+
+            if((cnum.innerHTML==anum.innerHTML)&&(cnum.innerHTML==bnum.innerHTML)){
+                document.getElementById("result").innerHTML = "Success(click here to do again)";
+            }
+            else
+                document.getElementById("result").innerHTML = "fail(click here to do again)";
+        }
+
+
+
+
+        function again(){
+            document.getElementById("result").innerHTML = " ";
+            document.getElementById("a").innerHTML = 0;
+            document.getElementById("b").innerHTML = 0;
+            document.getElementById("c").innerHTML = 0;
+
+        }
+    </script>
+</head>
+<body>
+    <h3>갬블링 게임</h3>
+    <p>각 숫자를 클릭하면 0에서 2사이의 난수를 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+    <hr>
+    <div id="gamebling">
+        <span id = "a" onclick="changeA()"> 0 </span>
+        <span id = "b" onclick="changeB()"> 0 </span>
+        <span id = "c" onclick="changeC()"> 0 </span>
+
+    </div><br>
+    <div id="result" onclick="again()"></div>
+</body>
+</html>

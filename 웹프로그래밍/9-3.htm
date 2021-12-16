@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>이벤트 연습</h3>
+    <hr>
+    <input type="text" id="from" size="10">
+    <input type="text" id="to" size="10">
+    <button id="sum" onclick="send()">제출</button>
+    <br>
+    <span id="span"></span>
+    <script>
+       function send(){
+        var from = document.getElementById("from").value
+        var to = parseInt(document.getElementById("to").value)
+        var span = document.getElementById("span")
+        var sum = 0
+        from = parseInt(from)
+        console.log(from)
+        console.log(to)
+           for( var i=from; i<=to; i++){
+            sum +=i ;
+            console.log(sum)
+           }
+            
+        span.innerHTML = sum
+       }
+
+            
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+         background-color: aliceblue;
+        }
+        #s1{
+            display: inline-block;
+            text-align: center;
+            border: 1px solid;
+        }
+        #s2{
+            display: inline-block;
+            width: 5%; text-align: center;
+            font-weight: bolder;
+
+        }
+        #s3{
+            display: inline-block;
+            width: 5%; text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>나의 단어장 모두 출력</h3>
+    <hr>
+    <div id="div">
+
+    </div>
+    <script>
+        
+        for(var i=0; i<localStorage.length; i++) {
+            var d = document.getElementById("div")
+
+            var key = localStorage.key(i);
+            var val = localStorage.getItem(key);
+            var s1 = document.createElement("span");
+            s1.id = "s1"
+            var s2 = document.createElement("span");
+            s2.id = "s2"
+            var s3 = document.createElement("span");
+            s3.id = "s3"
+
+            var num = document.createTextNode((i+1)+" ");
+            var key = document.createTextNode(key);
+            var value = document.createTextNode(" " + val);
+            var br = document.createElement("br")
+            
+            s1.appendChild(num); 
+            s2.appendChild(key); 
+            s3.appendChild(value);
+            
+            d.appendChild(s1)
+            d.appendChild(s2)
+            d.appendChild(s3)
+            d.appendChild(br)
+            }
+        
+    </script>
+</body>
+</html>

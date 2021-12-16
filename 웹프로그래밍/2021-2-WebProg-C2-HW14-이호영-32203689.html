@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>오디오 리스트 연속 재생</h3>
+    <hr>
+    <p>처음 play 버튼을 누르면 리스트에 있는 곡이 연속하여 자동 재생됩니다.
+        마우스로 다른 곡을 선택하면 곡이 바뀝니다. next버튼을 누르면 다음 곡으로 넘어갑니다.
+    </p>
+    <hr>
+    <audio id="audio" src="" controls audio.onended = "next()"">웹 브라우저가 audio 태그를 지원하지 않습니다.</audio>
+    <br><br>
+    <select id="select" size="3">
+        <option value="intro.mp3" onclick="mplay()">intro</option>
+        <option value="bgm.mp3" onclick="mplay()">bgm</option>
+        <option value="gameover.mp3" onclick="mplay()">gameover</option>
+    </select>
+    <button id="play" onclick="mplay()">play</button>
+    <button id="next" onclick="next()">next</button>
+    <p id="now music">
+        
+    </p>
+    <script>
+        var audio = document.getElementById("audio")
+        var select = document.getElementById("select")
+        
+        var index = select.selectedIndex
+        
+        
+        function mplay(){
+            var msrc = select.options[select.selectedIndex].value;
+                index = select.selectedIndex
+                audio.src = msrc
+                audio.load()
+            audio.play();
+            document.getElementById("now music").innerHTML = select[index].value +"를 재생합니다"
+        }
+        function next(){
+            
+            if (index == 2){
+                var msrc = select.options[0].value;
+                audio.src = msrc
+                index = 0
+                document.getElementById("now music").innerHTML = select[index].value +"를 재생합니다"
+                audio.load()
+                audio.play()
+            }
+            else{
+                var msrc = select.options[index+1].value;
+                console.log(msrc)
+                audio.src = msrc
+                index = index+1
+                document.getElementById("now music").innerHTML = select[index].value +"를 재생합니다"
+                audio.load()
+                audio.play()
+            }
+        }
+        
+
+    </script>
+
+</body>
+</html>

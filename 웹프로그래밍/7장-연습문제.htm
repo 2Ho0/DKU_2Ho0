@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var account = {
+        owner : "황기태",
+        code : "111",
+        balance : 35000,
+        inquiry: function(){
+            return this.balance;
+        },
+        deposit: function(){
+            this.balance+= money;
+        },
+
+        }
+        document.write(account.owner, account.code, account.inquiry(),"<br>");
+        
+        function student(name, score){
+            this.univ = "한국대학";
+            this.name = name;
+            this.score = score;
+        }
+        var kitae = new student("황기태",75);
+        document.write(kitae.univ + kitae.name);
+
+    </script>
+</body>
+</html>
